@@ -1,0 +1,25 @@
+Some bizarre monitoring system
+------------------------------
+
+Written by cl3mens feb 2011
+
+packit.sh should be placed on a client and run by a cron job
+It depends on ifconfig, hostname, grep, awk, cut, mc and the 
+cpu.sh/mem.sh/rootfs.sh scripts
+
+Configure packit.sh to drop the .data-file at a location readable by
+the monitoring server (preferably running apache as well)
+
+generatePage.sh reads .data-files from it's workdir and generates
+a HTML page for easy readouts
+
+Wooooo!
+
+Todo: 
+
+* cpu.sh is a bit bloated, can we find current idle-percentage in another way?
+* Cleaner way to get the IP address? No need for root would be nice
+* Conditional formating of the cells would be cool as well
+* Implement support for custom services (pid-file detection?)
+* Flush the .data-file after reading it, creating a empty file. If a host dies, the empty file will be left indicating a problem to the generatePage.sh-script
+* Solution? Don't include IP in .data, the server has a conf file with host+ip. Would eliminate need for empty files (kind of a fragile system).
