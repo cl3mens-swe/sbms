@@ -4,7 +4,7 @@ Some bizarre monitoring system
 Written by cl3mens feb 2011
 
 packit.sh should be placed on a client and run by a cron job
-It depends on ifconfig, hostname, grep, awk, cut, mc and the 
+It depends on ifconfig, hostname, grep, awk, cut, bc and the 
 cpu.sh/mem.sh/rootfs.sh scripts
 
 Configure packit.sh to drop the .data-file at a location readable by
